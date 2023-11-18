@@ -1,0 +1,60 @@
+---
+title: TypeSQL
+description: Get started building your docs site with Starlight.
+template: splash
+hero:
+  tagline: Generate Typescript API from raw MySQL queries!
+  ##  image:
+  ##    file: ../../assets/typesql-deno.gif
+  actions:
+    - text: Get Started
+      link: /guides/get-started/
+      icon: right-arrow
+      variant: primary
+    - text: See on github
+      link: https://github.com/wsporto/typesql
+      icon: external
+---
+
+import { Card, CardGrid } from "@astrojs/starlight/components";
+import { Image } from "astro:assets";
+import typesqldemo from "../../assets/typesql-deno.gif";
+
+##### TypeSQL is an alternative to access MySQL databases without an ORM. Write your queries in raw SQL and TypeSQL will generate a type-safe API to execute the queries.
+
+## How it works?
+
+Having the following query in `select-products.sql` file.
+
+```sql
+SELECT
+  id,
+  product_name,
+  list_price
+FROM products
+WHERE discontinued = 0
+  AND list_price BETWEEN :minPrice AND :maxPrice
+```
+
+TypeSQL will generate the types and function in the file select-products.ts. Then you can import the generate code and execute as following:
+
+<img src={typesqldemo.src} alt="A rocketship in space." />
+
+## Highlights
+
+<CardGrid stagger>
+  <Card title="Do not restrict the use of SQL">
+    You dont need to learn any new query language, you can use SQL with all its
+    power and expressiveness.
+  </Card>
+  <Card title="Automatic CRUD generation">
+    Typesql generates CRUD operations for the tables you specify.
+  </Card>
+  <Card title="Support for nested query result">
+    You can get nested results for your queries.
+  </Card>
+  <Card title="No runtime dependency">
+    TypeSQL is used only during development time, the queries are exected using
+    the battle tested mysql2 driver.
+  </Card>
+</CardGrid>
