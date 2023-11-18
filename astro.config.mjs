@@ -1,8 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 
-import cloudflare from "@astrojs/cloudflare";
-
 // https://astro.build/config
 export default defineConfig({
   integrations: [starlight({
@@ -36,7 +34,5 @@ export default defineConfig({
     customCss: [
     // Relative path to your custom CSS file
     './src/styles/custom.css']
-  })],
-  output: "server",
-  adapter: cloudflare()
+  })]
 });
