@@ -24,7 +24,12 @@ export default defineConfig({
       }, {
         label: 'Nested query result',
         link: '/guides/nested-query-result/'
-      }]
+      },
+      {
+        label: 'Transaction',
+        link: '/guides/transaction/'
+      }
+    ]
     }, {
       label: 'How-to Guides',
       items: [
