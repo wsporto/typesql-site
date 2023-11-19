@@ -29,6 +29,10 @@ export default defineConfig({
       label: 'How-to Guides',
       items: [
         {
+          label: 'IN/NOT IN',
+          link: '/how-to/in-operator'
+        },
+        {
           label: 'Count relations',
           link: '/how-to/count-relations'
         }
