@@ -35,6 +35,10 @@ export default defineConfig({
         {
           label: 'Count relations',
           link: '/how-to/count-relations'
+        },
+        {
+          label: 'WITH RECURSIVE',
+          link: '/how-to/with-recursive'
         }
       ]
     }],
