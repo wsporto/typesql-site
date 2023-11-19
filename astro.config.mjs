@@ -27,9 +27,12 @@ export default defineConfig({
       }]
     }, {
       label: 'How-to Guides',
-      autogenerate: {
-        directory: 'how-to'
-      }
+      items: [
+        {
+          label: 'Count relations',
+          link: '/guides/get-started/'
+        }
+      ]
     }],
     customCss: [
     // Relative path to your custom CSS file
