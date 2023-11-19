@@ -30,7 +30,7 @@ export default defineConfig({
       items: [
         {
           label: 'Count relations',
-          link: '/guides/get-started/'
+          link: '/how-to/count-relations'
         }
       ]
     }],
