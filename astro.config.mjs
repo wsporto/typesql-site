@@ -42,6 +42,10 @@ export default defineConfig({
           link: '/how-to/count-relations'
         },
         {
+          label: 'UPSERT',
+          link: '/how-to/upsert'
+        },
+        {
           label: 'WITH RECURSIVE',
           link: '/how-to/with-recursive'
         }
