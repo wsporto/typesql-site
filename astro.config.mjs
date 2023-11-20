@@ -49,8 +49,18 @@ export default defineConfig({
           label: 'WITH RECURSIVE',
           link: '/how-to/with-recursive'
         }
+      ],
+    },
+    {
+      label: 'Playground',
+      items: [
+        {
+          label: 'Demo project',
+          link: '/how-to/demo-project'
+        }
       ]
-    }],
+    }
+  ],
     customCss: [
     // Relative path to your custom CSS file
     './src/styles/custom.css']
