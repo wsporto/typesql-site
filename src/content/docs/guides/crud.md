@@ -11,11 +11,11 @@ You can specify the tables you want to generate CRUD operations on the config f
   "databaseUri": "mysql://root:password@localhost/mydb",
   "sqlDir": "./src/sqls",
   "target": "node",
-  "includeCrudTables": ["*"]
+  "includeCrudTables": ["books", "authors"]
 }
 ```
 
-If you use [*], TypeSQL will generate CRUD operations for all the tables on your schema.
+If you use ["*"], TypeSQL will generate CRUD operations for all the tables on your schema.
 
 ## CRUD Operations
 
@@ -30,7 +30,7 @@ CREATE TABLE books(
 )
 ```
 
-If you define the configuration "includeCrudTables": ["*"], TypeSQL will generate the following functions `insertIntoBooks(...)`, `selectFromBooks(...)`, `updateBooks(...)` and `deleteFromBooks(...)`.
+If you define the configuration "includeCrudTables": ["books"], TypeSQL will generate the following functions `insertIntoBooks(...)`, `selectFromBooks(...)`, `updateBooks(...)` and `deleteFromBooks(...)`.
 
 See an example of how to call the generated functions:
 
