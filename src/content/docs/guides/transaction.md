@@ -6,6 +6,7 @@ description: Running functions inside a transaction
 You may want to run the functions inside a transaction. You can do it as the following:
 
 ```ts
+// main.ts
 import { createConnection } from "mysql2/promise";
 
 const conn = await createConnection({

@@ -6,6 +6,7 @@ description: How to write queries with IN/NOT IN operator
 Having the following query in `select-products-in-categories.sql`:
 
 ```sql
+// select-products-in-categories.sql
 SELECT
     ProductID,
     ProductName,
@@ -18,6 +19,7 @@ WHERE Discontinued = false
 You can use the generated API as below:
 
 ```ts
+// main.ts
 const products = await selectProductsInCategories(client, {
   categories: [10, 11, 12],
 });
@@ -26,6 +28,7 @@ const products = await selectProductsInCategories(client, {
 You can also use the `NOT IN` operator:
 
 ```sql
+// select-products.sql
 SELECT
     ProductID,
     ProductName,

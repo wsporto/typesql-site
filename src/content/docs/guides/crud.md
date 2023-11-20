@@ -6,7 +6,8 @@ description: Show hot wo generate CRUD operations for the specified tables.
 Typesql can automatically generate CRUD operations for the tables you want.
 You can specify the tables you want to generate CRUD operations on the config file `typesql.json` with the attribute **includeCrudTables**.
 
-```json
+```json {6}
+// typesql.json
 {
   "databaseUri": "mysql://root:password@localhost/mydb",
   "sqlDir": "./src/sqls",
@@ -35,6 +36,7 @@ If you define the configuration "includeCrudTables": ["books"], TypeSQL will gen
 See an example of how to call the generated functions:
 
 ```ts
+// main.ts
 const insertedBook = await insertIntoBooks(conn, {
   title: "my book title",
   isbn: "123-123-123",

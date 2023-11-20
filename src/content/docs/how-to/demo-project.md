@@ -25,15 +25,26 @@ docker run -d --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:8
 npx degit github:wsporto/typesql-demo my-new-project
 ```
 
-3. Go to the project folder and run `npm install` to install the dependences;
+3. Go to project folder and install the dependencies:
 
-4. Run `npx typesql compile -w` to run TypeSQL on watch mode;
+```sh
+cd ./my-new-project
+```
 
-5. Write the queries in the `./src/sql` folder:
+```sh
+npm i
+```
 
-File: `./src/sqls/select-products.sql`:
+4. Run TypeSQL on watch mode:
+
+```sh
+npx typesql compile -w
+```
+
+5. Write the queries in the `./src/sqls` folder:
 
 ```sql
+// ./src/sqls/select-products.sql
 SELECT
     productCode,
     productName
@@ -47,6 +58,13 @@ LIMIT 5
 File: `src/main.ts`:
 
 ```ts
+const conn = await createConnection({
+  host: "localhost",
+  database: "classicmodels",
+  user: "root",
+  password: "password",
+});
+
 const products = await selectProducts(conn);
 ```
 
