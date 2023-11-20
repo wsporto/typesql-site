@@ -5,9 +5,8 @@ description: How to write queries with WITH RECURSIVE
 
 If you want to generate a sequence of numbers up to the specified number.
 
-File: `generate-sequence.sql`:
-
 ```sql
+// generate-sequence.sql
 WITH RECURSIVE seq (sequence) AS
 (
     SELECT 1
@@ -18,6 +17,7 @@ SELECT * FROM seq
 ```
 
 ```ts
+// main.ts
 const sequence = generateSequence(conn, { max: 5 });
 console.table(sequence);
 ```

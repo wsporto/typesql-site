@@ -11,9 +11,8 @@ MySQL provides some useful statements when it is necessary to UPDATE or INSERT (
 
 Below is an example of how to update a book or insert (if it does not exist).
 
-File `insert-book.sql`:
-
 ```sql
+// insert-book.sql
 INSERT INTO books
     (title, isbn, year_published)
 VALUES
@@ -27,6 +26,7 @@ ON DUPLICATE KEY UPDATE
 You can use the generated function:
 
 ```ts
+// main.ts
 const insertedBook = await upsertBook(conn, {
   title: "Book title",
   isbn: "123-123",

@@ -8,6 +8,7 @@ TypeSQL also has support for nested queries results.
 When you create your queries, by default, TypeSQL will generate a tabular result type, even if your queries include JOINs relations. For example, consider the query below in the file `select-user-posts.sql`:
 
 ```sql
+// select-user-posts.sql
 SELECT
     id as user_id,
     name as user_name,
@@ -21,6 +22,7 @@ INNER JOIN posts on posts.user_id = users.id
 For this query, TypeSQL by default will generate a type result like this:
 
 ```ts
+// main.ts
 const result = await selectUserPosts(conn);
 
 //result type
@@ -37,6 +39,7 @@ If you want to generate a nested query result, you must annotate the query with 
 For example:
 
 ```sql
+// select-user-posts.sql
 -- @nested
 SELECT
   *
@@ -47,6 +50,7 @@ INNER JOIN posts on posts.user_id = users.id
 Now TypeSQL will generate a nested type that will be returned when you run `selectUserPostsNested(conn)`:
 
 ```ts
+// main.ts
 const result = await selectUserPostsNested(conn);
 
 //result type

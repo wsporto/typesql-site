@@ -10,6 +10,7 @@ If you want to generate a custom query, write the query using raw sql in the fol
 Having the following query in `select-products.sql` file.
 
 ```sql
+// select-products.sql
 SELECT
   id,
   product_name,
@@ -22,6 +23,7 @@ WHERE discontinued = 0
 TypeSQL will generate the types and function in the file select-products.ts. Then you can import the generate code and execute as following:
 
 ```ts
+// main.ts
 const products = await selectProducts(conn, {
   minPrice: 10,
   maxPrice: 20,

@@ -8,6 +8,7 @@ Sometimes you may want to return a count of relations (for example, a user's pos
 Having the query below in the file `select-users-with-post-count.sql`:
 
 ```sql
+// select-users-with-post-count.sql
 SELECT
 	u.name,
 	count(p.id) as postCount
@@ -20,6 +21,7 @@ ORDER BY count(p.id) desc
 TypeSQL will gererate the function `selectUsersWithPostCount`:
 
 ```ts
+// main.ts
 const usersWithPostCount = await selectUsersWithPostCount(conn);
 console.table(usersWithPostCount);
 ```
