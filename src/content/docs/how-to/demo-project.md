@@ -55,9 +55,8 @@ LIMIT 5
 
 6. Write the code using the generated functions:
 
-File: `src/main.ts`:
-
 ```ts
+// src/main.ts
 const conn = await createConnection({
   host: "localhost",
   database: "classicmodels",
@@ -68,7 +67,11 @@ const conn = await createConnection({
 const products = await selectProducts(conn);
 ```
 
-7. Execute the queries using `npm run dev`.
+7. Execute the queries:
+
+```sh
+npm run dev
+```
 
 Result:
 
