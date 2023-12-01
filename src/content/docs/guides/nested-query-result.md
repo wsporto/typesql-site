@@ -65,7 +65,66 @@ const result: {
 }[];
 ```
 
-### Nested result limitations
+## Relationship Patterns
+
+### One To One
+
+Below is an example where one _Customer_ is associated with one _Address_.
+
+```sql
+// schema.sql
+CREATE TABLE customers(
+    id SERIAL,
+    full_name VARCHAR(255) NOT NULL,
+    address_id BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY `pk_id`(`id`),
+    CONSTRAINT `fk_customers_addresses`
+        FOREIGN KEY (`address_id`)
+        REFERENCES `addresses` (`id`)
+);
+
+CREATE TABLE addresses(
+    id SERIAL,
+    address VARCHAR(255) NOT NULL,
+    zip_code VARCHAR(16) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    state CHAR(2) NOT NULL,
+    PRIMARY KEY `pk_id`(`id`)
+);
+```
+
+```sql
+// select-customer-with-address.sql
+-- @nested
+SELECT *
+FROM customers c
+INNER JOIN addresses as address ON address.id = c.address_id
+WHERE c.id = :customer_id
+```
+
+Use the generated function:
+
+```ts
+// main.ts
+const result = await selectCustomerWithAddressNested(conn, { customer_id: 1 });
+
+/* result type
+{
+  id: number,
+  full_name: string,
+  address_id: number,
+  address: {
+    id: number,
+    address: string,
+    zip_code: string,
+    city: string,
+    state: string
+  }
+}
+/*
+```
+
+## Nested result limitations
 
 When you use nested queries you must project the `primary key` of each relation in the query. If you have a query like this `SELECT ... FROM users LEFT JOIN posts LEFT JOIN comments` you must project the primary of the tables: `users`, `posts` and `comments`.
 
