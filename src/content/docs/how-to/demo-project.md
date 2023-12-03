@@ -16,7 +16,7 @@ The image contains the [sample database](https://www.mysqltutorial.org/mysql-sam
 Or if you want to create an empty mysql database, run:
 
 ```shell
-docker run -d --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password mysql:8.0
+docker run -d --name mysql8 -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=mydb mysql:8.0
 ```
 
 2. Download the configured repository using degit:
