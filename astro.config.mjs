@@ -15,16 +15,27 @@ export default defineConfig({
       {
         label: 'Get started',
         link: '/guides/get-started/'
-      }, {
+      }, 
+      {
         label: 'Automatic CRUD generation',
         link: '/guides/crud/'
-      }, {
+      }, 
+      {
         label: 'Custom queries',
         link: '/guides/custom-queries/'
-      }, {
+      }, 
+      {
         label: 'Nested query result',
         link: '/guides/nested-query-result/'
       },
+      {
+        label: 'Conditional filters',
+        link: '/guides/conditional-filters/'
+      }, 
+      {
+        label: 'Dynamic queries',
+        link: '/guides/dynamic-queries/'
+      }, 
       {
         label: 'Transaction',
         link: '/guides/transaction/'
