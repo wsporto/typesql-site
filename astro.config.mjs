@@ -17,6 +17,10 @@ export default defineConfig({
         link: '/guides/get-started/'
       }, 
       {
+        label: 'Database Migrations',
+        link: '/guides/database-migrations'
+      },
+      {
         label: 'Automatic CRUD generation',
         link: '/guides/crud/'
       }, 
