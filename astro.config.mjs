@@ -67,6 +67,15 @@ export default defineConfig({
       ],
     },
     {
+      label: 'Recipes',
+      items: [
+        {
+          label: 'SvelteKit and Cloudflare D1',
+          link: '/recipes/sveltekit-d1'
+        }
+      ]
+    },
+    {
       label: 'Playground',
       items: [
         {
