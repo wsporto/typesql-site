@@ -156,11 +156,11 @@ export const load: PageServerLoad = async ({ platform }) => {
 // src/routes/+page.svelte
 <script lang="ts">
   import type { PageData } from "./$types";
-  let { posts }: PageData = $props();
+  let { data }: { data: PageData } = $props();
 </script>
 <h1>Posts</h1>
 <ul>
-  {#each posts as post}
+  {#each data.posts as post}
   <li>{post.title}</li>
   {/each}
 </ul>
