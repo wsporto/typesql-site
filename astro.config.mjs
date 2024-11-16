@@ -72,6 +72,10 @@ export default defineConfig({
         {
           label: 'SvelteKit and Cloudflare D1',
           link: '/recipes/sveltekit-d1'
+        },
+        {
+          label: 'TypeSQL with Deno',
+          link: '/recipes/deno'
         }
       ]
     },
