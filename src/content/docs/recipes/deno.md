@@ -51,7 +51,8 @@ Deno will prompt for permission to write the `typesql.json` configuration file.
     "databaseUri": "mydb.db",
     "sqlDir": "./src/sql",
     "client": "libsql",
-    "includeCrudTables": []
+    "includeCrudTables": [],
+    "moduleExtension": "ts"
 }
 ```
 
